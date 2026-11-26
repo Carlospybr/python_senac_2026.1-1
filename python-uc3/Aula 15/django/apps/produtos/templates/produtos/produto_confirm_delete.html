@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}Produtos | Pé na Estrada{% endblock %}
+
+{% block content %}
+
+    <h1 class="mb-4">Remover produto</h1>
+    <p>Tem certeza de que deseja remover o produto?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">
+            Confirmar exclusão
+        </button>
+        <a href="{% url 'produtos:produtos_listar' %}"
+            class="btn btn-outline-secondary">Cancelar</a>
+    </form>
+
+
+{% endblock %}
